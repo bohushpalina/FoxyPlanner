@@ -1,0 +1,39 @@
+{% extends 'main/layout.html'%}
+
+{% block title %}
+<title>Задачи</title>
+{% endblock%}
+
+{% block content %}
+<h1>Задачи</h1>
+
+{% if tasks %}
+    <div class="task-table-container">
+        <table class="task-table">
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Описание</th>
+                    <th>Дедлайн</th>
+                    <th>Статус</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in tasks %}
+                <tr>
+                    <td>{{ task.title }}</td>
+                    <td>{{ task.description }}</td>
+                    <td>{{ task.deadline|date:"d.m.Y H:i" }}</td>
+                    <td class="status {% if task.is_completed %}completed{% endif %}">
+                        {% if task.is_completed %}Выполнено{% else %}Не выполнено{% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% else %}
+    <p>Задачи отсутствуют</p>
+{% endif %}
+
+{% endblock %}

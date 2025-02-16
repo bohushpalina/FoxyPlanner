@@ -1,0 +1,24 @@
+{% extends 'main/layout.html'%}
+
+{% block title %}
+<title>Создание события</title>
+{% endblock%}
+
+{% block content %}
+<h1>Создать событие</h1>
+
+<div class="event-form-container">
+    <form method="post" class="event-form">
+        {% csrf_token %}
+
+        {{form.title}}
+        {{form.description}}
+        {{form.published_date}}
+        <div class="error-message">
+            {{ error }}
+        </div>
+        <button type="submit" class="event-button">Создать</button>
+    </form>
+</div>
+
+{% endblock %}

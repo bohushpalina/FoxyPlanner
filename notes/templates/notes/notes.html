@@ -1,0 +1,24 @@
+{% extends 'main/layout.html'%}
+
+{% block title %}
+<title>Заметки</title>
+{% endblock%}
+
+{% block content %}
+<h1>Заметки</h1>
+
+{% if notes %}
+    <ul class="notes-list">
+        {% for note in notes %}
+            <li class="note-item">
+                <h2 class="note-title">{{ note.title }}</h2>
+                <p class="note-date">{{ note.created_at }}</p>
+                <p class="note-description">{{ note.description }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p class="no-notes">Заметки отсутствуют</p>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'main/layout.html'%}
+
+{% block title %}
+<title>{{ title }}</title>
+{% endblock%}
+
+
+{% block content %}
+<h1 class = Main_name> FoxyPlanner</h1>
+<h1>Добро пожаловать в Личный органайзер!</h1>
+    <p>Это ваш персональный помощник для управления задачами, заметками и событиями. Простой интерфейс и удобные функции помогут вам оставаться организованным.</p>
+    <p>Начните пользоваться прямо сейчас!</p>
+    </a>
+    <a href={% url 'about'%} class="btn btn-about">О нас</a>
+{% endblock %}
+

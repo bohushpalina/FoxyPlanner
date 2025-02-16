@@ -1,0 +1,29 @@
+{% extends 'main/layout.html'%}
+
+{% block title %}
+<title>События!!</title>
+{% endblock%}
+
+{% block content %}
+<h1>События в календарике</h1>
+
+{% if events%}
+<div class="events-container">
+    {% for el in events %}
+    <div class="article-container">
+        <h3 class="article-title">{{ el.title }}</h3>
+        <p class="article-description">{{ el.description }}</p>
+        <p class="article-date">Опубликовано: {{ el.published_date|date:"d.m.Y H:i" }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<p>У вас нет записей!</p>
+{% endif %}
+
+<!-- Кнопка для создания нового события -->
+<div class="add-event-container">
+    <a href="{% url 'create_event' %}" class="btn btn-add-event">Создать новое событие</a>
+</div>
+
+{% endblock %}
