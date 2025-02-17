@@ -13,11 +13,11 @@
     <p><strong>Время события:</strong> {{ event.published_date|date:"H:i" }}</p>
 </div>
 
-{% comment %} <!-- Кнопки действий -->
+<!-- Кнопки действий -->
 <div class="event-buttons">
-    <a href="{% url 'edit_event' event.id %}" class="btn btn-edit">Редактировать</a>
-    <a href="{% url 'delete_event' event.id %}" class="btn btn-delete">Удалить</a>
-</div> {% endcomment %}
+    <a href="{% url 'event_update' event.id %}" class="btn btn-edit">Редактировать</a>
+    <a href="{% url 'event_delete' event.id %}" class="btn btn-delete">Удалить</a>
+</div>
 
 <!-- Кнопка назад -->
 <div class="back-container">

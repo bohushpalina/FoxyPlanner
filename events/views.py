@@ -19,8 +19,8 @@ class EventUpdateView(UpdateView):
     
 class EventDeleteView(DeleteView):
     model = Articles
+    success_url = '/events/'
     template_name = 'events/delete_event.html'
-    form_class = ArticleForm
 
 def create_event(request):
     error = ''
