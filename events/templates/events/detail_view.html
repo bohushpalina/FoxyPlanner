@@ -9,8 +9,8 @@
 
 <div class="event-detail">
     <p><strong>Описание:</strong> {{ event.description }}</p>
-    <p><strong>Дата события:</strong> {{ event.event_date|date:"d.m.Y H:i" }}</p>
-    <p><strong>Опубликовано:</strong> {{ event.published_date|date:"d.m.Y H:i" }}</p>
+    <p><strong>Дата события:</strong> {{ event.published_date|date:"d.m.Y" }}</p>
+    <p><strong>Время события:</strong> {{ event.published_date|date:"H:i" }}</p>
 </div>
 
 {% comment %} <!-- Кнопки действий -->

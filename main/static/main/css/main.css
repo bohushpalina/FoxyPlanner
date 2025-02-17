@@ -646,3 +646,16 @@ p {
 .btn-back:hover {
     background-color: #5a6268;
 }
+
+/* Фото мое */
+.about-image-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.about-image {
+    width: 300px;  /* Изменить размер изображения */
+    height: auto;  /* Сохранение пропорций */
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+}
