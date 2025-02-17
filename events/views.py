@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Articles
 from .forms import ArticleForm
-from django import DetailView
+from django.views.generic import DetailView
 
 def events_home(request):
     events = Articles.objects.order_by('published_date')

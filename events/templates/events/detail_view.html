@@ -1,11 +1,27 @@
-{% extends 'main/layout.html'%}
+{% extends 'main/layout.html' %}
 
 {% block title %}
-<title>Событиe</title>
-{% endblock%}
+<title>{{ event.title }}</title>
+{% endblock %}
 
 {% block content %}
-<h1>Событие</h1>
+<h1>{{ event.title }}</h1>
 
+<div class="event-detail">
+    <p><strong>Описание:</strong> {{ event.description }}</p>
+    <p><strong>Дата события:</strong> {{ event.event_date|date:"d.m.Y H:i" }}</p>
+    <p><strong>Опубликовано:</strong> {{ event.published_date|date:"d.m.Y H:i" }}</p>
+</div>
+
+{% comment %} <!-- Кнопки действий -->
+<div class="event-buttons">
+    <a href="{% url 'edit_event' event.id %}" class="btn btn-edit">Редактировать</a>
+    <a href="{% url 'delete_event' event.id %}" class="btn btn-delete">Удалить</a>
+</div> {% endcomment %}
+
+<!-- Кнопка назад -->
+<div class="back-container">
+    <a href="{% url 'events_home' %}" class="btn btn-back">Назад к событиям</a>
+</div>
 
 {% endblock %}

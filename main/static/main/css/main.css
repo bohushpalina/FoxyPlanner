@@ -619,3 +619,30 @@ p {
     color: #d9534f;
     font-size: 14px;
 }
+
+/* Кнопка "Подробнее" */
+.btn-detail {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-detail:hover {
+    background-color: #5a6268;
+}
+
+/* Общий стиль для контейнера кнопок */
+.event-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Кнопка "Назад к событиям" */
+.btn-back {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-back:hover {
+    background-color: #5a6268;
+}
