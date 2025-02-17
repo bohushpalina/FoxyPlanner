@@ -1,0 +1,22 @@
+{% extends 'main/layout.html'%}
+
+{% block title %}
+<title>Создание заметки</title>
+{% endblock%}
+
+{% block content %}
+<h1>Создать/отредактировать заметку</h1>
+
+<div class="note-form-container">
+    <form method="post" class="note-form">
+        {% csrf_token %}
+        {{form.title}}
+        {{form.description}}
+        <div class="error-message">
+            {{ error }}
+        </div>
+        <button type="submit" class="note-button">Сохранить</button>
+    </form>
+</div>
+
+{% endblock %}

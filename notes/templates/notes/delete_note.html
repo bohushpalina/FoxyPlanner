@@ -1,0 +1,18 @@
+{% extends 'main/layout.html'%}
+
+{% block title %}
+<title>Удалить заметку</title>
+{% endblock%}
+
+{% block content %}
+<h1>Удаление заметки</h1>
+
+<div class="note-form-container">
+    <form method="post" class="note-form">
+        {% csrf_token %}
+        <h2>Уверены, что хотите удалить данную заметку?</h2>
+        <button type="submit" class="note-button"> Удалить заметку </button>
+    </form>
+</div>
+
+{% endblock %}
