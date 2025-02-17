@@ -630,6 +630,26 @@ p {
     background-color: #5a6268;
 }
 
+/* Кнопка "Редактировать" */
+.btn-edit {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #5a6268;
+}
+
+/* Кнопка "Удалить" */
+.btn-delete {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #5a6268;
+}
+
 /* Общий стиль для контейнера кнопок */
 .event-buttons {
     display: flex;

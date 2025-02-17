@@ -8,5 +8,8 @@ class ArticleForm(ModelForm):
         widgets = {
             'title': TextInput(attrs={'class': 'event-input', 'placeholder': 'Введите название события'}),
             'description': Textarea(attrs={'class': 'event-textarea', 'placeholder': 'Введите описание'}),
-            'published_date': DateTimeInput(attrs={'class': 'event-input', 'type': 'datetime-local'}),
+            'published_date': DateTimeInput(
+                attrs={'class': 'event-input', 'type': 'datetime-local'},
+                format='%Y-%m-%dT%H:%M'  # Исправляем формат даты и времени
+            ),
         }

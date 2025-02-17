@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Articles
 from .forms import ArticleForm
-from django.views.generic import DetailView, UpdateView
+from django.views.generic import DetailView, UpdateView, DeleteView
 
 def events_home(request):
     events = Articles.objects.order_by('published_date')
@@ -15,6 +15,11 @@ class EventDetailView(DetailView):
 class EventUpdateView(UpdateView):
     model = Articles
     template_name = 'events/create_event.html'
+    form_class = ArticleForm
+    
+class EventDeleteView(DeleteView):
+    model = Articles
+    template_name = 'events/delete_event.html'
     form_class = ArticleForm
 
 def create_event(request):

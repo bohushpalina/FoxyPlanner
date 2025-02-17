@@ -9,7 +9,7 @@ class Articles(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return '/events/{self.id}'
+        return f'/events/{self.id}'
         
     class Meta:
         verbose_name = "Событие"

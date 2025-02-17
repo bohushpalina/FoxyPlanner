@@ -18,8 +18,8 @@
          <!-- Кнопки действий -->
          <div class="event-buttons">
             <a href="{% url 'event_detail' el.id %}" class="btn btn-detail">Подробнее</a>
-            {% comment %} <a href="{% url 'edit_event' el.id %}" class="btn btn-edit">Редактировать</a>
-            <a href="{% url 'delete_event' el.id %}" class="btn btn-delete">Удалить</a> {% endcomment %}
+            <a href="{% url 'event_update' el.id %}" class="btn btn-edit">Редактировать</a>
+            <a href="{% url 'event_delete' el.id %}" class="btn btn-delete">Удалить</a>
         </div>
 
     </div>
