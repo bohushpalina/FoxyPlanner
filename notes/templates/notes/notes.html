@@ -16,7 +16,7 @@
                 <p class="note-description">{{ note.description }}</p>
                 <div class="note-actions">
                     <a href="{% url 'edit_note' note.id %}" class="edit-button">Редактировать</a>
-                    <a href="{% url 'delete_note' note.id %}" class="delete-button" onclick="return confirm('Вы уверены, что хотите удалить эту заметку?')">Удалить</a>
+                    <a href="{% url 'delete_note' note.id %}" class="delete-button">Удалить</a>
                 </div>
             </li>
         {% endfor %}
