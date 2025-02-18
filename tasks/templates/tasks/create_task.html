@@ -1,0 +1,36 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+<title>Создание задачи</title>
+{% endblock %}
+
+{% block content %}
+<h1>Создать/отредактировать задачу</h1>
+
+<form method="post">
+    {% csrf_token %}
+    
+    <div class="form-group">
+        <label for="{{ form.title.id_for_label }}">Название задачи:</label>
+        {{ form.title }}
+    </div>
+
+    <div class="form-group">
+        <label for="{{ form.description.id_for_label }}">Описание:</label>
+        {{ form.description }}
+    </div>
+
+    <div class="form-group">
+        <label for="{{ form.deadline.id_for_label }}">Дедлайн:</label>
+        {{ form.deadline }}
+    </div>
+
+    <div class="form-group">
+        <label for="{{ form.is_completed.id_for_label }}">Выполнено:</label>
+        {{ form.is_completed }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+</form>
+
+{% endblock %}
