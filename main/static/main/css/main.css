@@ -843,3 +843,54 @@ p {
         margin-top: 20px;
     }
 }
+
+
+/* Общий контейнер */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 10px;
+}
+
+/* Заголовок */
+h1 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Поля ввода */
+.task-input, .task-textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #fff;
+}
+
+/* Текстовое поле */
+.task-textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+/* Кнопка */
+.btn-primary {
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #e68900;
+}

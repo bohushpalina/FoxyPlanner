@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Task
 from .forms import TaskForm
 from django.views.generic import DetailView, UpdateView, DeleteView
@@ -22,3 +22,8 @@ def create_task(request):
         'error' : error
     }
     return render(request, 'tasks/create_task.html', data)
+
+class TaskUpdateView(UpdateView):
+    model = Task
+    template_name = 'tasks/create_task.html'
+    form_class = TaskForm
