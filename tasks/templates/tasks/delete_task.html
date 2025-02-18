@@ -1,0 +1,18 @@
+{% extends 'main/layout.html'%}
+
+{% block title %}
+<title>Удалить задачу</title>
+{% endblock%}
+
+{% block content %}
+<h1>Удаление задачи</h1>
+
+<div class="note-form-container">
+    <form method="post" class="note-form">
+        {% csrf_token %}
+        <h2>Уверены, что хотите удалить данную задачу?</h2>
+        <button type="submit" class="note-button"> Удалить задачу </button>
+    </form>
+</div>
+
+{% endblock %}

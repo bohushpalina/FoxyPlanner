@@ -894,3 +894,23 @@ h1 {
 .btn-primary:hover {
     background: #e68900;
 }
+
+.task_but {
+    background-color: #969696; /* Оранжевый цвет фона */
+    color: white !important;  /* Белый цвет текста */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    border: none; /* Убираем границу */
+    border-radius: 8px; /* Скругленные углы */
+    font-size: 16px; /* Размер шрифта */
+    cursor: pointer; /* Курсор в виде указателя при наведении */
+    transition: background-color 0.3s, transform 0.2s; /* Плавные переходы для фона и масштаба */
+}
+
+.task_but:hover {
+    background-color: #e68900; /* Темнее оранжевый при наведении */
+    transform: scale(1.05); /* Легкое увеличение кнопки */
+}
+
+.task_but:active {
+    transform: scale(0.95); /* Легкое уменьшение кнопки при нажатии */
+}

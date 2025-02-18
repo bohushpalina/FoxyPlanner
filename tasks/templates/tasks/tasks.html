@@ -1,8 +1,8 @@
-{% extends 'main/layout.html'%}
+{% extends 'main/layout.html' %}
 
 {% block title %}
 <title>Задачи</title>
-{% endblock%}
+{% endblock %}
 
 {% block content %}
 <h1>Задачи</h1>
@@ -16,6 +16,7 @@
                     <th>Описание</th>
                     <th>Дедлайн</th>
                     <th>Статус</th>
+                    <th>Действия</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,6 +27,11 @@
                     <td>{{ task.deadline|date:"d.m.Y H:i" }}</td>
                     <td class="status {% if task.is_completed %}completed{% endif %}">
                         {% if task.is_completed %}Выполнено{% else %}Не выполнено{% endif %}
+                    </td>
+                    <td>
+                        <p><a href="{% url 'task_update' task.id %}" class="task_but">Редактировать</a></p>
+                        <p><a href="{% url 'task_delete' task.id %}" class="task_but">Удалить</a></p>
+
                     </td>
                 </tr>
                 {% endfor %}
@@ -41,3 +47,4 @@
 </div>
 
 {% endblock %}
+
