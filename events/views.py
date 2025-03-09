@@ -7,7 +7,6 @@ from django.views.generic import DetailView, UpdateView, DeleteView
 @login_required
 def events_home(request):
     events = Articles.objects.filter(user=request.user)
-    events = Articles.objects.order_by('published_date')
     return render(request, 'events/events_home.html', {'events': events})
 
 class EventDetailView(DetailView):
@@ -30,7 +29,9 @@ def create_event(request):
     if request.method == 'POST':
         form = ArticleForm(request.POST)
         if form.is_valid():
-            form.save()
+            event = form.save(commit=False)  # Не сохраняем сразу
+            event.user = request.user  # Присваиваем пользователя
+            event.save()
             return redirect('events_home')
         else:
             error = "Форма заполнена некорректно"

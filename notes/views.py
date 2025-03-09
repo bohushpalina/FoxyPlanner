@@ -7,7 +7,6 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def notes(request):
     notes = Note.objects.filter(user=request.user)
-    notes = Note.objects.order_by('created_at')
     return render(request, 'notes/notes.html', {'notes': notes})
 
 def create_note(request):
@@ -16,6 +15,8 @@ def create_note(request):
     if request.method == 'POST':
         form = NoteForm(request.POST)
         if form.is_valid():
+            notes = form.save(commit=False)  # Не сохраняем сразу
+            notes.user = request.user 
             form.save()
             return redirect('notes')
         else:

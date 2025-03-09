@@ -5,6 +5,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 
 @login_required
@@ -36,6 +37,7 @@ def user_login(request):
             return redirect("home")  # Перенаправляем на страницу, с которой пытался войти
         else:
             messages.error(request, "Неверный логин или пароль")
+            form = AuthenticationForm()
     else:
         form = AuthenticationForm()
 
