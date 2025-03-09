@@ -9,5 +9,6 @@ urlpatterns = [
     path('', include('main.urls')),
     path('events/', include ('events.urls')),
     path('tasks/', include ('tasks.urls')),
-    path('notes/', include ('notes.urls'))
+    path('notes/', include ('notes.urls')),
+    path("users/", include("users.urls"))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
