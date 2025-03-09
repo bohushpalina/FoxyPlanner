@@ -15,6 +15,11 @@
     <aside>
         <img src="{% static 'main/img/fox.svg' %}" alt="Logo" style="width: 100px; height: auto;">
         <h3>FoxyPlanner</h3>
+        {% if user.is_authenticated %}
+        <p>Вы вошли под ником: {{ user.username }}</p>
+        {% else %}
+        <p>Привет, гость!</p>
+        {% endif %}
         <ul>
             <li><a href={% url 'home' %}><i class="fa-solid fa-house"></i> Главная</a></li>
             <li><a href={% url 'tasks' %}><i class="fa-solid fa-list-check"></i> Задачи</a></li>

@@ -1,6 +1,8 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 class Articles(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     title = models.CharField(max_length=200, verbose_name="Название события")
     description = models.TextField(verbose_name="Полное описание")
     published_date = models.DateTimeField(verbose_name="Дата публикации")

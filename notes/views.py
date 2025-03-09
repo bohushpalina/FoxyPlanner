@@ -2,13 +2,16 @@ from django.shortcuts import render, redirect
 from .models import Note
 from .forms import NoteForm
 from django.views.generic import UpdateView, DeleteView
+from django.contrib.auth.decorators import login_required
 
-
+@login_required
 def notes(request):
+    notes = Note.objects.filter(user=request.user)
     notes = Note.objects.order_by('created_at')
     return render(request, 'notes/notes.html', {'notes': notes})
 
 def create_note(request):
+    notes = Note.objects.filter(user=request.user)
     error = ''
     if request.method == 'POST':
         form = NoteForm(request.POST)

@@ -1,9 +1,12 @@
 from django.shortcuts import render, redirect
 from .models import Articles
 from .forms import ArticleForm
+from django.contrib.auth.decorators import login_required
 from django.views.generic import DetailView, UpdateView, DeleteView
 
+@login_required
 def events_home(request):
+    events = Articles.objects.filter(user=request.user)
     events = Articles.objects.order_by('published_date')
     return render(request, 'events/events_home.html', {'events': events})
 
